@@ -31,7 +31,7 @@ console.log("In your cart, you have"+ `${itemNames} at ${cart[itemNames]}`);
 function removeFromCart(item){
   var price=Math.floor((Math.random() * 100) + 1);
   for (var item in cart) {
-    if (cart.hasOwnProperty(item)) {
+    if (!cart.hasOwnProperty(item)) {
       alert("That item is not in your cart.");
     }
     else {
