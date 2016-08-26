@@ -16,16 +16,21 @@ return cart;
 }
 
 function viewCart(){
-  var itemNames = Object.keys(cart);
+  var price=Math.floor((Math.random() * 100) + 1);
+  //var shaheer;
+  var shaheer=[];
   if(cart==0){
     console.log("Your shopping cart is empty.");
   }
   else{
-  for (var itemNames in cart){
-    //console.log("In your cart, you have" + itemnames + "at $" + cart[itemnames]);
-console.log("In your cart, you have"+ `${itemNames} at ${cart[itemNames]}`);
+  for (var item in cart){
+    shaheer+=("In your cart, you have"+ cart +" at "+ cart[item])
+    //shaheer.push(cart +" at "+ cart[item]);
   }
 }
+console.log("In your cart, you have"+ `${shaheer}`);
+
+//console.log("shaheer);
 }
 
 function removeFromCart(item){
