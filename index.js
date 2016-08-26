@@ -22,7 +22,9 @@ function viewCart(){
   if(cart.length===0){
     console.log("Your shopping cart is empty.");
   }
-  for (var item in cart){
+  for (var i=0;i<=cart.length;i++){
+    var item=Object.keys(cart[i])[0];
+    var price=cart[i][item];
     shaheer+=` ${item} at $${cart[item]},`
   }
     //shaheer.push(cart +" at "+ cart[item]);
@@ -37,11 +39,12 @@ function viewCart(){
 function removeFromCart(item){
   var price=Math.floor((Math.random() * 100) + 1);
   for (var item in cart) {
-    if (!cart.hasOwnProperty(item)) {
-      alert("That item is not in your cart.");
+    if(cart.hasOwnProperty('item')==false) {
+      console.log("That item is not in your cart.");
     }
     else {
-      cart.pop({ [item]: price });
+    //  ` ${item} at $${cart[item]}
+      cart.pop(`${item}`);
       return cart;
   }
 }
