@@ -28,9 +28,9 @@ function viewCart(){
     //shaheer.push(cart +" at "+ cart[item]);
   }
 }
-console.log("In your cart, you have"+ `${shaheer}`);
+//console.log("In your cart, you have"+ `${shaheer}`);
 
-//console.log("shaheer);
+console.log("shaheer);
 }
 
 function removeFromCart(item){
