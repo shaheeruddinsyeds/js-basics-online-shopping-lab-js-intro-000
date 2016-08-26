@@ -23,7 +23,7 @@ function viewCart(){
     console.log("Your shopping cart is empty.");
   }
   for (var item in cart){
-    shaheer+=("In your cart, you have"+ cart +" at "+ cart[item])
+    shaheer+=("In your cart, you have"+ cart +" at "+ cart[item] )
     //shaheer.push(cart +" at "+ cart[item]);
   }
   console.log(shaheer);
