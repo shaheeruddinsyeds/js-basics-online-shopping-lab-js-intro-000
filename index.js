@@ -17,21 +17,20 @@ return cart;
 
 function viewCart(){
   var price=Math.floor((Math.random() * 100) + 1);
-  var shaheer;
+  var shaheer="";
   //var shaheer=[];
-  if(cart==0){
+  if(cart.length===0){
     console.log("Your shopping cart is empty.");
   }
-  else{
   for (var item in cart){
     shaheer+=("In your cart, you have"+ cart +" at "+ cart[item])
     //shaheer.push(cart +" at "+ cart[item]);
   }
+  console.log(shaheer);
 }
 //console.log("In your cart, you have"+ `${shaheer}`);
 
-console.log(shaheer);
-}
+
 
 function removeFromCart(item){
   var price=Math.floor((Math.random() * 100) + 1);
