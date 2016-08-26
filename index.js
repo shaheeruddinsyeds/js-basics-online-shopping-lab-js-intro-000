@@ -16,18 +16,20 @@ return cart;
 }
 
 function viewCart(){
-  var price=Math.floor((Math.random() * 100) + 1);
-  var shaheer="";
+  //var price=Math.floor((Math.random() * 100) + 1);
+  var shaheer="In your cart, you have";
   //var shaheer=[];
   if(cart.length===0){
     console.log("Your shopping cart is empty.");
   }
   for (var item in cart){
-    shaheer+=("In your cart, you have"+ cart +" at "+ cart[item], )
-    //shaheer.push(cart +" at "+ cart[item]);
+    shaheer+=` ${item} at $${cart[item]},`
   }
+    //shaheer.push(cart +" at "+ cart[item]);
+    shaheer = (shaheer.slice(0,-1) + '.');
   console.log(shaheer);
 }
+
 //console.log("In your cart, you have"+ `${shaheer}`);
 
 
