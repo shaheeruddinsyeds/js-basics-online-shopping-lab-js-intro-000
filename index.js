@@ -20,7 +20,7 @@ function viewCart(){
   var shaheer="In your cart, you have";
   //var shaheer=[];
   if(cart.length===0){
-    console.log("Your shopping cart is empty.");
+    return console.log("Your shopping cart is empty.");
   }
   for (var i=0;i<=cart.length;i++){
     var item=Object.keys(cart[i])[0];
