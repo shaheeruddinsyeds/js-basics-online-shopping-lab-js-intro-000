@@ -17,8 +17,8 @@ return cart;
 
 function viewCart(){
   var price=Math.floor((Math.random() * 100) + 1);
-  //var shaheer;
-  var shaheer=[];
+  var shaheer;
+  //var shaheer=[];
   if(cart==0){
     console.log("Your shopping cart is empty.");
   }
@@ -30,7 +30,7 @@ function viewCart(){
 }
 //console.log("In your cart, you have"+ `${shaheer}`);
 
-console.log("shaheer);
+console.log(shaheer);
 }
 
 function removeFromCart(item){
