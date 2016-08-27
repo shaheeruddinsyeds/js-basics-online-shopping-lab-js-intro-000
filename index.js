@@ -17,19 +17,19 @@ return cart;
 
 function viewCart(){
   //var price=Math.floor((Math.random() * 100) + 1);
-  var shaheer="In your cart, you have";
-  //var shaheer=[];
+  //var shaheer="In your cart, you have";
+  var shaheer=[];
   if(cart.length===0){
     return console.log("Your shopping cart is empty.");
   }
-  for (var i=0;i<=cart.length;i++){
+  for (var i=0;i<cart.length;i++){
     var item=Object.keys(cart[i])[0];
     var price=cart[i][item];
     shaheer+=` ${item} at $${cart[item]},`
   }
     //shaheer.push(cart +" at "+ cart[item]);
     shaheer = (shaheer.slice(0,-1) + '.');
-  console.log(shaheer);
+  return console.log(shaheer);
 }
 
 //console.log("In your cart, you have"+ `${shaheer}`);
