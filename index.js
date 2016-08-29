@@ -25,11 +25,12 @@ function viewCart(){
   for (var i=0;i<cart.length;i++){
     var item=Object.keys(cart[i])[0];
     var price=cart[i][item];
-    shaheer+=` ${item} at $${cart[item]},`
+    shaheer.push=(` ${item} at $${cart[item]},`);
   }
     //shaheer.push(cart +" at "+ cart[item]);
+
     shaheer = (shaheer.slice(0,-1) + '.');
-  return console.log(shaheer);
+  return("In your cart, you have"+`${shaheer}`);
 }
 
 //console.log("In your cart, you have"+ `${shaheer}`);
@@ -37,26 +38,41 @@ function viewCart(){
 
 
 function removeFromCart(item){
-  var price=Math.floor((Math.random() * 100) + 1);
+  //var price=Math.floor((Math.random() * 100) + 1);
   for (var item in cart) {
-    if(cart.hasOwnProperty('item')==false) {
-      console.log("That item is not in your cart.");
+    if(cart.hasOwnProperty(`${item}`)){
+    //  delete (`${item}`);
+//  return cart=cart.pop(`${item}`);
+ cart=cart.slice(cart.indexOf(item),1);
+return cart;
     }
-    else {
-    //  ` ${item} at $${cart[item]}
-      cart.pop(`${item}`);
-      return cart;
+    else{
+    alert("That item is not in your cart.");
   }
 }
 }
 
+/*function removeFromCart(item){
+  //var price=Math.floor((Math.random() * 100) + 1);
+    if(cart.hasOwnProperty(`${item}`)){
+    //  delete (`${item}`);
+//  return cart=cart.pop(`${item}`);
+ cart=cart.slice(cart.indexOf(item),1);
+      return cart;
+    }
+    else{
+    alert("That item is not in your cart.");
+  }
+}*/
+
+
 function placeOrder(cc){
-  var total=Math.floor((Math.random() * 100) + 1);
-if(cc==""){
+if(cc===undefined){
   console.log("We don't have a credit card on file for you to place your order.")
 }
 else{
-  console.log("Your total cost is $"+ `${total}, which will be charged to the card ${cc}.`);
+console.log(`Your total cost is $${total()}, which will be charged to the card ${cc}.`);
+cart=[];
 }
 }
 
@@ -64,10 +80,9 @@ else{
 
 function total() {
   let t = 0
-
   for (var i = 0, l = cart.length; i < l; i++) {
     for (var item in cart[i]) {
-      t += cart[i][item]
+      t+= cart[i][item]
     }
   }
 return t;
