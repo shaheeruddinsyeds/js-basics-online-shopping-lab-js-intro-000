@@ -22,20 +22,24 @@ function viewCart() {
     //var shaheer="In your cart, you have";
     var sohail = ["In your cart, you have"];
     var shaheer = [];
+
     if (cart.length === 0) {
         console.log("Your shopping cart is empty.");
     }
+
+
     for (var i = 0; i < cart.length; i++) {
-        var item = Object.keys(cart[i])[0];
-        var price = cart[i][item];
-        shaheer.push = (` ${item} at $${cart[item]},`);
+        for (var key in cart[i]) {
+            var item = Object.keys(cart[i])[0];
+            var price = cart[i][item];
+            shaheer.push = (` ${item} at $${cart[item]},`);
+        }
     }
     //shaheer.push(cart +" at "+ cart[item]);
     shaheer = sohail.join();
     shaheer = (shaheer.slice(0, -1) + '.');
     return shaheer;
 }
-
 //console.log("In your cart, you have"+ `${shaheer}`);
 
 
@@ -46,15 +50,19 @@ function removeFromCart(item) {
         for (var key in cart[i]) {
             if (key == item) {
                 cart.splice(i, 1);
-            } else {
-                {
-                  console.log("That item is not in your cart.")
-                    //alert("That item is not in your cart.");
-                }
+                return cart;
+}
+            //else
+            //  alert("That item is not in your cart.");
+            //alert("That item is not in your cart.");
+            else   {
+                console.log("That item is not in your cart.");
             }
         }
     }
-  }
+}
+
+
 
     function placeOrder(cc) {
         if (cc === undefined) {
